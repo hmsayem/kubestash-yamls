@@ -1,0 +1,16 @@
+apiVersion: addons.kubestash.com/v1alpha1
+kind: Addon
+metadata:
+  name: kubedb-manifest-addon
+  namespace: default
+spec:
+  backupTasks:
+    - name: manifest-backup
+      function: kubedb-manifest-backup
+      driver: Restic 
+      executor: Job #Daemon
+  restoreTasks:
+    - name: manifest-restore
+      function: kubedb-manifest-restore
+      driver: Restic
+      executor: Job
