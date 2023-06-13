@@ -24,8 +24,8 @@ spec:
       sessionHistoryLimit: 3
       scheduler:
         schedule: "*/2 * * * *"
-        successfulJobsHistoryLimit: 10
-        failedJobsHistoryLimit: 10
+        successfulJobsHistoryLimit: 1
+        failedJobsHistoryLimit: 1
         jobTemplate:
           backoffLimit: 1
       repositories:
@@ -39,3 +39,6 @@ spec:
         name: kubedb-manifest-addon
         tasks:
           - name: manifest-backup
+        # jobTemplate:
+        #   spec:
+        #     serviceAccountName: cross-namespace-target-reader

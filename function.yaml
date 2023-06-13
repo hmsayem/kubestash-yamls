@@ -2,28 +2,23 @@ apiVersion: addons.kubestash.com/v1alpha1
 kind: Function
 metadata:
   name: kubedb-manifest-backup
-spec:
-  image: hmsayem/kubedb-manifest:fix-snapshot-component_linux_amd64
+spec: 
+  image: hmsayem/kubedb-manifest:remove-flags_linux_amd64
   args:
   - backup
-  - --scratchDir=${scratchDir:=/tmp}
   - --namespace=${namespace:=default}
   - --backupSession=${backupSession:=}
-  - --targetKind=${targetKind:=}
-  - --targetNamespace=${targetNamespace:=default}
-  - --targetName=${targetName:=}
 ---
 apiVersion: addons.kubestash.com/v1alpha1
 kind: Function
 metadata:
   name: kubedb-manifest-restore
 spec:
-  image: hmsayem/kubedb-manifest:fix-snapshot-component_linux_amd64
+  image: hmsayem/kubedb-manifest:remove-flags_linux_amd64
   args:
   - restore
   - --namespace=${namespace:=default}
   - --restoreSession=${restoreSession:=}
-  - --targetKind=${targetKind:=}
   - --restoreNamespace=${restoreNamespace:=default}
   - --mongoYaml=${mongoYaml:=true}
   - --mongoName=${mongoDBName:=}
@@ -33,3 +28,4 @@ spec:
   - --authSecretName=${authSecretName:=}
   - --configSecretYaml=${configSecretYaml:=true}
   - --configSecretName=${configSecretName:=}
+  - --snapshotName=${snapshotName:=}

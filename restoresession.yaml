@@ -12,10 +12,10 @@ spec:
       authSecret: true
       configSecret: true
   dataSource:
-    snapshot: s3-repo-bc-frequent-backup-1683879840
+    snapshot: latest
     repository: s3-repo
     encryptionSecret:
-      name: encry-secret # some addon may not support encryption
+      name: encry-secret 
       namespace: demo
   addon:
     name: kubedb-manifest-addon
