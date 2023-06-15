@@ -21,7 +21,7 @@ spec:
         namespace: demo
   sessions:
     - name: frequent-backup
-      sessionHistoryLimit: 3
+      sessionHistoryLimit: 5
       scheduler:
         schedule: "*/2 * * * *"
         successfulJobsHistoryLimit: 1
