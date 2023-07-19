@@ -3,7 +3,7 @@ kind: Function
 metadata:
   name: kubedb-manifest-backup
 spec: 
-  image: hmsayem/kubedb-manifest:remove-flags_linux_amd64
+  image: hmsayem/kubedb-manifest:v0.1.0-10-g2ee1314-dirty_linux_amd64
   args:
   - backup
   - --namespace=${namespace:=default}
@@ -14,7 +14,7 @@ kind: Function
 metadata:
   name: kubedb-manifest-restore
 spec:
-  image: hmsayem/kubedb-manifest:remove-flags_linux_amd64
+  image: hmsayem/kubedb-manifest:v0.1.0-10-g2ee1314-dirty_linux_amd64
   args:
   - restore
   - --namespace=${namespace:=default}

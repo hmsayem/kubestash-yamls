@@ -6,10 +6,10 @@ spec:
   backupTasks:
     - name: manifest-backup
       function: kubedb-manifest-backup
+      singleton: true
       driver: Restic 
-      executor: Job 
   restoreTasks:
     - name: manifest-restore
       function: kubedb-manifest-restore
+      singleton: true
       driver: Restic
-      executor: Job
